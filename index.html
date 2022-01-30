@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .col2 {
+        background: #ddd;
+      }
+      .col1 {
+        background: #eee;
+        padding: 1em;
+      }
+
+      /* make margin between columns and rows */
+      .wrapper {
+        display: grid;
+        grid-template-columns: 40% 30% 30%;
+        /* grid-column-gap: 2em;
+        grid-row-gap: 2rem; */
+        grid-gap: 2em;
+      }
+
+      .container {
+        margin-top: 10rem;
+        display: grid;
+        /* grid-template-columns: 1fr 1fr 1fr; */
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1em;
+        /* the text can overflow if it exceed 200px */
+        grid-auto-rows: 100px;
+        /* the box will be 100px in default but when it exceed 100px the box will stretch to fix it */
+        /* make the row has equal box  */
+        grid-auto-rows: minmax(100px, auto);
+      }
+
+      .container div {
+        background: #eee;
+        padding: 1em;
+      }
+
+      .container div:nth-child(odd) {
+        background: #ddd;
+      }
+      /* .lala div:nth-child(odd) {
+        background: #ddd;
+      } */
+
+      .nested {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 70px;
+
+        grid-gap: 1em;
+      }
+
+      .nested div {
+        border: #333 1px solid;
+        padding: 1em;
+      }
+
+      .wrapper1 {
+        margin-top: 10rem;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-auto-rows: minmax(100px, auto);
+        grid-gap: 1em;
+      }
+
+      .wrapper1 div {
+        padding: 1em;
+        background: #eee;
+      }
+      .wrapper1 div:nth-child(odd) {
+        background: #ddd;
+      }
+
+      .box1 {
+        grid-column: 1/3;
+        grid-row: 1/3;
+        /* align-self: start; */
+      }
+
+      .box2 {
+        grid-row: 1/3;
+        /* align-self: end; */
+      }
+      .box3 {
+        grid-row: 1/3;
+        /* align-self: center; */
+      }
+      .box4 {
+      }
+      .box5 {
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="lala">
+      <div>alo</div>
+      <div>alo</div>
+      <div>alo</div>
+      <div>alo</div>
+      <div>alo</div>
+      <div>alo</div>
+    </div> -->
+
+    <div class="wrapper">
+      <div class="col1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi doloribus,
+        quas impedit nesciunt repudiandae est, provident at voluptate, quae
+        ratione voluptatum voluptatibus pariatur fugiat harum maxime esse eaque
+        vitae? Labore veniam incidunt, minus aperiam quaerat nobis aut culpa
+        saepe perferendis quae magni ducimus nisi officia molestias suscipit
+        quis voluptates harum ratione placeat voluptas assumenda porro eaque
+        facilis. A expedita voluptatibus possimus, suscipit nemo quo unde nulla
+        soluta recusandae quae labore, eveniet voluptate sunt. Nemo aperiam
+        molestias, ipsum numquam consectetur cumque. Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Fugiat laborum quaerat earum vel repellat,
+        ad labore eius! Fuga iure sit fugiat ipsum magni labore similique ab!
+        Saepe molestias ex officia iusto accusantium repellat similique tempore
+        minus doloremque voluptatem quo aperiam iste consequuntur asperiores
+        commodi explicabo, ea reprehenderit sed suscipit corrupti eius!
+        Assumenda qui corrupti quos nam veniam eum, accusamus et eos enim natus,
+        quaerat expedita voluptate tenetur quisquam provident commodi blanditiis
+        nisi rem doloremque ipsam quis architecto nulla. Ratione, magni!
+      </div>
+      <div class="col2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque nam
+        cumque dolorum dignissimos nesciunt nulla quasi, commodi omnis quia.
+        Nesciunt nam, quasi laborum eos modi qui facere quia reprehenderit
+        optio.
+      </div>
+      <div class="col1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque nam
+        cumque dolorum dignissimos nesciunt nulla quasi, commodi omnis quia.
+        Nesciunt nam, quasi laborum eos modi qui facere quia reprehenderit
+        optio.
+      </div>
+      <div class="col2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque nam
+        cumque dolorum dignissimos nesciunt nulla quasi, commodi omnis quia.
+        Nesciunt nam, quasi laborum eos modi qui facere quia reprehenderit
+        optio.
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="item1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum tenetur
+        quod deserunt, assumenda in cumque deleniti maiores molestiae magnam at
+        dolorum illo similique sit cum maxime! Est temporibus perspiciatis
+        adipisci?
+      </div>
+      <div class="item2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum tenetur
+        quod deserunt, assumenda in cumque deleniti maiores molestiae magnam at
+        dolorum illo similique sit cum maxime! Est temporibus perspiciatis
+        adipisci?
+      </div>
+      <div class="item3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum tenetur
+        quod deserunt, assumenda in cumque deleniti maiores molestiae magnam at
+        dolorum illo similique sit cum maxime! Est temporibus perspiciatis
+        adipisci?
+      </div>
+      <div class="item4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum tenetur
+        quod deserunt, assumenda in cumque deleniti maiores molestiae magnam at
+        dolorum illo similique sit cum maxime! Est temporibus perspiciatis
+        adipisci?
+      </div>
+      <div class="item5">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum tenetur
+        quod deserunt, assumenda in cumque deleniti maiores molestiae magnam at
+        dolorum illo similique sit cum maxime! Est temporibus perspiciatis
+        adipisci?
+      </div>
+      <div class="item6">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum tenetur
+        quod deserunt, assumenda in cumque deleniti maiores molestiae magnam at
+        dolorum illo similique sit cum maxime! Est temporibus perspiciatis
+        adipisci?
+      </div>
+      <div class="item7">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum tenetur
+        quod deserunt, assumenda in cumque deleniti maiores molestiae magnam at
+        dolorum illo similique sit cum maxime! Est temporibus perspiciatis
+        adipisci?
+      </div>
+      <div class="item8">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum tenetur
+        quod deserunt, assumenda in cumque deleniti maiores molestiae magnam at
+        dolorum illo similique sit cum maxime! Est temporibus perspiciatis
+        adipisci?
+      </div>
+      <div class="item9">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum tenetur
+        quod deserunt, assumenda in cumque deleniti maiores molestiae magnam at
+        dolorum illo similique sit cum maxime! Est temporibus perspiciatis
+        adipisci?
+      </div>
+      <div class="item10">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum tenetur
+        quod deserunt, assumenda in cumque deleniti maiores molestiae magnam at
+        dolorum illo similique sit cum maxime! Est temporibus perspiciatis
+        adipisci?
+      </div>
+      <div class="item11">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum tenetur
+        quod deserunt, assumenda in cumque deleniti maiores molestiae magnam at
+        dolorum illo similique sit cum maxime! Est temporibus perspiciatis
+        adipisci?
+      </div>
+      <div class="item12">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum tenetur
+        quod deserunt, assumenda in cumque deleniti maiores molestiae magnam at
+        dolorum illo similique sit cum maxime! Est temporibus perspiciatis
+        adipisci?
+      </div>
+      <div class="nested">
+        <div>Nien</div>
+        <div>Nien</div>
+        <div>Nien</div>
+        <div>Nien</div>
+        <div>Nien</div>
+        <div>Nien</div>
+        <div>Nien</div>
+        <div>Nien</div>
+        <div>Nien</div>
+        <div>Nien</div>
+        <div>Nien</div>
+        <div>Nien</div>
+      </div>
+    </div>
+
+    <div class="wrapper1">
+      <div class="box box1">Box 1</div>
+      <div class="box box2">Box 2</div>
+      <div class="box box3">Box 3</div>
+      <div class="box box4">Box 4</div>
+      <div class="box box5">Box 5</div>
+      <div class="box box6">Box 6</div>
+    </div>
+  </body>
+</html>
